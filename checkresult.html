@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Result</title>
+    <!-- Welcome to Sarfaraz's Coding Club -->
+    <style>
+        *{
+            margin:  0px;
+            padding: 0px;
+        }
+        .container{
+            width: 800px;
+            height: 300px;
+            margin: auto;
+            margin-top: 200px;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 2x gray;
+            background-color: black;
+        }
+        .container h3{
+            font-size: 25px;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: Verdana;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .container p{
+            font-size: 13px;
+            color:aliceblue;
+            text-transform: capitalize;
+            font-family: verdana;
+            margin-top: -3px;
+            text-align: center;
+        }
+        .container input{
+            width: 90%;
+            height: 20px;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: azure;
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+            margin-left: 15px;
+            border: none;
+            border-radius: 50px;
+        }
+        .container input::placeholder{
+            font-weight: 300;
+        }
+        .container button{
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 100px;
+            background-color: white;
+            color: green;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .container button:hover{
+            color: white;
+            background-color: black;
+            border: 3px solid green;
+        }
+        .resultcontainer{
+            margin-top: 20px;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            font-family: verdana;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Check Result Now</h3>
+        <p>Enter your name to get result</p>
+        <input type="text" id="sname" placeholder="Enter your name...">
+        <button onclick="resultshow()">&#x2714;</button>
+        <div class="resultcontainer">
+        </div>
+    </div>
+</body>
+<script>
+   function resultshow() {
+  var students = {
+    SARFARAZ: {
+      Bio: "98",
+      Physics: "99",
+      Chemistry: "78"
+    },
+    RIZWAN: {
+      Bio: "70",
+      Physics: "89",
+      Chemistry: "64"
+    },
+    HAIDER: {
+      Bio: "100",
+      Physics: "68",
+      Chemistry: "78"
+    }
+  };
+
+  var sname = document.getElementById("sname").value;
+  var input = sname.toUpperCase();
+  var show = students[input];
+  var showresult = document.getElementsByClassName("resultcontainer")[0];
+
+  if (show == undefined) {
+    showresult.innerHTML = "No Record Found!";
+  } else {
+    showresult.innerHTML = "Your Marks in Bio is " + show.Bio + "<br>";
+    showresult.innerHTML += "Your Marks in Physics is " + show.Physics + "<br>";
+    showresult.innerHTML += "Your Marks in Chemistry is " + show.Chemistry + "<br>";
+  }
+}
+
+</script>
+</html>
+
+<!-- Thanks for watching video Subscribe like and Share! -->
